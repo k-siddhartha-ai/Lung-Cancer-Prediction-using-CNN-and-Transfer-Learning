@@ -1,4 +1,4 @@
-Lung Cancer Prediction using CNN and Transfer Learning
+🧬 Lung Cancer Prediction using CNN and Transfer Learning
 
 Deep Learning • Medical Image Classification • Transfer Learning • Computer Vision
 
@@ -35,6 +35,7 @@ Acknowledgements
 License
 
 🧠 Introduction
+
 Lung cancer is one of the leading causes of cancer-related deaths worldwide. Early detection and accurate classification are crucial for effective treatment and patient survival. This project leverages deep learning techniques to develop a robust lung cancer classification model using chest X-ray images.
 
 📊 Dataset
@@ -69,11 +70,13 @@ test/
  └── squamous_cell_carcinoma/
 
 Alternatively, you can download a similar dataset from Kaggle:
+
 https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
 
 ▶ Google Colab Link
 
 To replicate and run the project in Google Colab:
+
 https://colab.research.google.com/drive/1kMTghEwVoJaFmlKydxuhhoyzHluIUjoV?usp=sharing
 
 ⚙ Dependencies
@@ -97,9 +100,7 @@ tensorflow
 keras
 
 Install dependencies:
-```bash
 pip install pandas numpy seaborn matplotlib scikit-learn tensorflow keras
-```
 
 📁 Project Structure
 .
@@ -118,7 +119,6 @@ Lung_Cancer_Prediction.ipynb — Notebook for training and evaluation
 dataset/ — Image dataset grouped by cancer type
 
 best_model.hdf5 — Saved trained model weights
-
 
 🏗 Training the Model
 
@@ -157,6 +157,7 @@ model.compile(
 )
 
 🔬 Using the Model
+
 Steps:
 
 Load trained .h5 model
@@ -191,7 +192,6 @@ https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
 This project is licensed under the MIT License.
 
 Feel free to use or modify this code for educational and non-commercial purposes.
-
 
 
 
