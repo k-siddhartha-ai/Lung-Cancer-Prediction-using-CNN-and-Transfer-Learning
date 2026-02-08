@@ -1,56 +1,50 @@
-🧬 Lung Cancer Prediction using CNN and Transfer Learning
+# 🧬 Lung Cancer Prediction using CNN and Transfer Learning
 
-Deep Learning • Medical Image Classification • Transfer Learning • Computer Vision
+**Deep Learning • Medical Image Classification • Transfer Learning • Computer Vision**
 
-Author: K. Siddhartha
+**Author:** K. Siddhartha
 
 This project aims to build a Lung Cancer Prediction System using Convolutional Neural Networks (CNN) and transfer learning. The model classifies lung cancer images into four categories:
 
-Normal
+* Normal
+* Adenocarcinoma
+* Large Cell Carcinoma
+* Squamous Cell Carcinoma
 
-Adenocarcinoma
+---
 
-Large Cell Carcinoma
+## 📑 Table of Contents
 
-Squamous Cell Carcinoma
+* Introduction
+* Dataset
+* Dependencies
+* Project Structure
+* Training the Model
+* Using the Model
+* Results
+* Acknowledgements
+* License
 
-📑 Table of Contents
+---
 
-Introduction
-
-Dataset
-
-Dependencies
-
-Project Structure
-
-Training the Model
-
-Using the Model
-
-Results
-
-Acknowledgements
-
-License
-
-🧠 Introduction
+## 🧠 Introduction
 
 Lung cancer is one of the leading causes of cancer-related deaths worldwide. Early detection and accurate classification are crucial for effective treatment and patient survival. This project leverages deep learning techniques to develop a robust lung cancer classification model using chest X-ray images.
 
-📊 Dataset
+---
+
+## 📊 Dataset
 
 The dataset used in this project consists of lung cancer images categorized into four classes:
 
-Normal
+* Normal
+* Adenocarcinoma
+* Large Cell Carcinoma
+* Squamous Cell Carcinoma
 
-Adenocarcinoma
+The dataset should be organized into training (`train`), validation (`valid`), and testing (`test`) folders with the following subfolders for each class:
 
-Large Cell Carcinoma
-
-Squamous Cell Carcinoma
-
-The dataset should be organized into training (train), validation (valid), and testing (test) folders with the following subfolders for each class:
+```
 train/
  ├── normal/
  ├── adenocarcinoma/
@@ -68,41 +62,46 @@ test/
  ├── adenocarcinoma/
  ├── large_cell_carcinoma/
  └── squamous_cell_carcinoma/
+```
 
 Alternatively, you can download a similar dataset from Kaggle:
 
-https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
+[https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images)
 
-▶ Google Colab Link
+---
+
+### ▶ Google Colab Link
 
 To replicate and run the project in Google Colab:
 
-https://colab.research.google.com/drive/1kMTghEwVoJaFmlKydxuhhoyzHluIUjoV?usp=sharing
+[https://colab.research.google.com/drive/1kMTghEwVoJaFmlKydxuhhoyzHluIUjoV?usp=sharing](https://colab.research.google.com/drive/1kMTghEwVoJaFmlKydxuhhoyzHluIUjoV?usp=sharing)
 
-⚙ Dependencies
+---
+
+## ⚙ Dependencies
 
 Required libraries:
 
-Python 3.x
-
-pandas
-
-numpy
-
-seaborn
-
-matplotlib
-
-scikit-learn
-
-tensorflow
-
-keras
+* Python 3.x
+* pandas
+* numpy
+* seaborn
+* matplotlib
+* scikit-learn
+* tensorflow
+* keras
 
 Install dependencies:
-pip install pandas numpy seaborn matplotlib scikit-learn tensorflow keras
 
-📁 Project Structure
+```bash
+pip install pandas numpy seaborn matplotlib scikit-learn tensorflow keras
+```
+
+---
+
+## 📁 Project Structure
+
+```
 .
 ├── Lung_Cancer_Prediction.ipynb
 ├── README.md
@@ -111,32 +110,30 @@ pip install pandas numpy seaborn matplotlib scikit-learn tensorflow keras
 │ ├── test/
 │ └── valid/
 └── best_model.hdf5
+```
 
-File Description
+### File Description
 
-Lung_Cancer_Prediction.ipynb — Notebook for training and evaluation
+* **Lung_Cancer_Prediction.ipynb** — Notebook for training and evaluation
+* **dataset/** — Image dataset grouped by cancer type
+* **best_model.hdf5** — Saved trained model weights
 
-dataset/ — Image dataset grouped by cancer type
+---
 
-best_model.hdf5 — Saved trained model weights
-
-🏗 Training the Model
+## 🏗 Training the Model
 
 The Jupyter Notebook contains the full training pipeline:
 
-Mount Google Drive
+* Mount Google Drive
+* Load and preprocess data using ImageDataGenerator
+* Define the model using Xception transfer learning
+* Compile the model
+* Train with callbacks (EarlyStopping, LR scheduler, checkpoints)
+* Save the trained model
 
-Load and preprocess data using ImageDataGenerator
+### Example Code
 
-Define the model using Xception transfer learning
-
-Compile the model
-
-Train with callbacks (EarlyStopping, LR scheduler, checkpoints)
-
-Save the trained model
-
-Example Code
+```python
 pretrained_model = tf.keras.applications.Xception(
     weights='imagenet',
     include_top=False,
@@ -155,43 +152,49 @@ model.compile(
     loss='categorical_crossentropy',
     metrics=['accuracy']
 )
+```
 
-🔬 Using the Model
+---
+
+## 🔬 Using the Model
 
 Steps:
 
-Load trained .h5 model
+* Load trained `.h5` model
+* Preprocess input image
+* Predict class probabilities
+* Display prediction
 
-Preprocess input image
+### Example
 
-Predict class probabilities
-
-Display prediction
-
-Example
+```python
 model = load_model('/content/drive/MyDrive/dataset/trained_lung_cancer_model.h5')
 predictions = model.predict(img)
 predicted_class = np.argmax(predictions[0])
+```
 
-📈 Results
+---
+
+## 📈 Results
 
 After training and evaluation:
 
-Final model accuracy: 93%
+* Final model accuracy: **93%**
 
 The model demonstrates strong performance in classifying lung cancer categories using transfer learning.
 
-🙏 Acknowledgements
+---
+
+## 🙏 Acknowledgements
 
 Chest CT Scan Images Dataset:
 
-https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images
+[https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images](https://www.kaggle.com/datasets/mohamedhanyyy/chest-ctscan-images)
 
-📜 License
+---
+
+## 📜 License
 
 This project is licensed under the MIT License.
 
 Feel free to use or modify this code for educational and non-commercial purposes.
-
-
-
